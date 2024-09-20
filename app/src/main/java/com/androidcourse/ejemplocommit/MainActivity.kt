@@ -81,7 +81,7 @@ fun LazyRowEjemplo() {
                         height = 40.dp
                     )
                     .background(Color.Blue)
-                    .padding(8.dp)
+                    .padding(8.dp) // ajustamos el tamaño
             ) {
                 Text(
                     text = "LzRow $index",
