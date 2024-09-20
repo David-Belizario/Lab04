@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.androidcourse.ejemplocommit.ui.theme.EjemploCommitTheme
 
 class MainActivity : ComponentActivity() {
@@ -88,20 +89,22 @@ fun GreetingPreview() {
 //}
 
 @Composable
-fun GridEjemplo(){
+fun GridEjemplo() {
     LazyVerticalGrid(
         columns = GridCells.Fixed(7),
         modifier = Modifier.fillMaxWidth()
     ) {
-        items(15) { index -> // Expresion Lambda
+        items(15) { index ->
             Box(
                 modifier = Modifier
                     .size(80.dp)
-                    .background(Color.DarkGray)
-                    .padding(10.dp)
+                    .background(Color.Gray)
+                    .padding(8.dp)
             ) {
                 Text(
-                    text = "Grid $index", color = Color.White
+                    text = "Grid $index",
+                    color = Color.White,
+                    fontSize = 14.sp
                 )
             }
         }
