@@ -52,58 +52,58 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     EjemploCommitTheme {
-        LazyColumnEjemplo()
+        LazyRowEjemplo()
+    }
+}
+
+//@Composable
+//fun LazyColumnEjemplo(){
+//    LazyColumn { // Una lista colmna larga
+//        items(5) { index -> // Funcion Lambda, se ejecuta sobre cada elemento
+//            // Establecemos la separacon de 5 dp para cada elemento
+//            Text("Ejempl $index", modifier = Modifier.padding(5.dp))
+//        }
+//    }
+//}
+
+@Composable
+fun LazyRowEjemplo(){
+    // Una lista horizontal, ideal para carruseles o elementos desplazados e n horizontal
+    // segun la cantidad de  "items" que elijamos
+    LazyRow { items(10) { index ->
+
+        Box( //Establecemos un contenendor con modificaciones tamaño, color de fondo
+            modifier = Modifier
+                .size(
+                    width = 75.dp,
+                    height = 35.dp
+                ) //Definimos alto y ancho de la caja de cada elemento
+                .background(Color.DarkGray) // Color de fondo
+                .padding(5.dp)
+        ) {
+            Text(text = "LzRow $index", color = Color.White) //
+        }
+    }
     }
 }
 
 @Composable
-fun LazyColumnEjemplo(){
-    LazyColumn { // Una lista colmna larga
-        items(5) { index -> // Funcion Lambda, se ejecuta sobre cada elemento
-            // Establecemos la separacon de 5 dp para cada elemento
-            Text("Ejempl $index", modifier = Modifier.padding(5.dp))
+fun GridEjemplo(){
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(7),
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        items(15) { index -> // Expresion Lambda
+            Box(
+                modifier = Modifier
+                    .size(80.dp)
+                    .background(Color.DarkGray)
+                    .padding(10.dp)
+            ) {
+                Text(
+                    text = "Grid $index", color = Color.White
+                )
+            }
         }
     }
 }
-
-//@Composable
-//fun LazyRowEjemplo(){
-//    // Una lista horizontal, ideal para carruseles o elementos desplazados e n horizontal
-//    // segun la cantidad de  "items" que elijamos
-//    LazyRow { items(10) { index ->
-//
-//        Box( //Establecemos un contenendor con modificaciones tamaño, color de fondo
-//            modifier = Modifier
-//                .size(
-//                    width = 75.dp,
-//                    height = 35.dp
-//                ) //Definimos alto y ancho de la caja de cada elemento
-//                .background(Color.DarkGray) // Color de fondo
-//                .padding(5.dp)
-//        ) {
-//            Text(text = "LzRow $index", color = Color.White) //
-//        }
-//    }
-//    }
-//}
-//
-//@Composable
-//fun GridEjemplo(){
-//    LazyVerticalGrid(
-//        columns = GridCells.Fixed(7),
-//        modifier = Modifier.fillMaxWidth()
-//    ) {
-//        items(15) { index -> // Expresion Lambda
-//            Box(
-//                modifier = Modifier
-//                    .size(80.dp)
-//                    .background(Color.DarkGray)
-//                    .padding(10.dp)
-//            ) {
-//                Text(
-//                    text = "Grid $index", color = Color.White
-//                )
-//            }
-//        }
-//    }
-//}
