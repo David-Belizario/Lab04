@@ -52,7 +52,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     EjemploCommitTheme {
-        LazyRowEjemplo()
+        GridEjemplo()
     }
 }
 
@@ -66,26 +66,26 @@ fun GreetingPreview() {
 //    }
 //}
 
-@Composable
-fun LazyRowEjemplo(){
-    // Una lista horizontal, ideal para carruseles o elementos desplazados e n horizontal
-    // segun la cantidad de  "items" que elijamos
-    LazyRow { items(10) { index ->
-
-        Box( //Establecemos un contenendor con modificaciones tamaño, color de fondo
-            modifier = Modifier
-                .size(
-                    width = 75.dp,
-                    height = 35.dp
-                ) //Definimos alto y ancho de la caja de cada elemento
-                .background(Color.DarkGray) // Color de fondo
-                .padding(5.dp)
-        ) {
-            Text(text = "LzRow $index", color = Color.White) //
-        }
-    }
-    }
-}
+//@Composable
+//fun LazyRowEjemplo(){
+//    // Una lista horizontal, ideal para carruseles o elementos desplazados e n horizontal
+//    // segun la cantidad de  "items" que elijamos
+//    LazyRow { items(10) { index ->
+//
+//        Box( //Establecemos un contenendor con modificaciones tamaño, color de fondo
+//            modifier = Modifier
+//                .size(
+//                    width = 75.dp,
+//                    height = 35.dp
+//                ) //Definimos alto y ancho de la caja de cada elemento
+//                .background(Color.DarkGray) // Color de fondo
+//                .padding(5.dp)
+//        ) {
+//            Text(text = "LzRow $index", color = Color.White) //
+//        }
+//    }
+//    }
+//}
 
 @Composable
 fun GridEjemplo(){
